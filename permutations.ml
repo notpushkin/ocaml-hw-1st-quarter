@@ -16,6 +16,9 @@ let rec range a b =
   else a :: range (a+1) b;;
   
 let get_sort_permut lt =
-  let alt = List.combine (range 0 ((List.lenhth lst)-1)) lst
+  let alt = List.combine (range 0 ((List.length lt)-1)) lt
   in let salt = List.sort (fun x y -> compare (snd x) (snd y)) alt
   in List.map (snd) salt;;
+
+let is_permut lst =
+  List.for_all (fun x -> (x>=0) && (x<(List.length lst))) lst;;
