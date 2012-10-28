@@ -7,3 +7,15 @@ let rec poly_add l1 l2 =
 
 let poly_sub l1 l2 =
   poly_add l1 (List.map (fun x -> -x) l2);;
+
+let print_poly lst =
+  List.iteri
+  (fun i x ->
+    print_int x;
+    if i < (List.length l) then (
+      print_string " * (x ^ ";
+      print_int ((List.length lst) - i);
+      print_string ") + "
+    ) else ()
+  )
+  lst;;
